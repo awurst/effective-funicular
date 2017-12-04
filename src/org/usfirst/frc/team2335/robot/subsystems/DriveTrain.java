@@ -23,11 +23,17 @@ public class DriveTrain extends Subsystem
 		leftMotor = new Victor(Robot.LEFT_MOTOR);
 		rightMotor = new Victor(Robot.RIGHT_MOTOR);
 		drive = new RobotDrive(leftMotor, rightMotor);
+		
 	}
 	
 	public void drive(double move, double rotate)
 	{
 		drive.arcadeDrive(move, rotate);
+	}
+	
+	public void stop()
+	{
+		drive.stopMotor();
 	}
 	
     public void initDefaultCommand() 
